@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTiendita.Login"
+             BackgroundColor="#cde2f2"
+             NavigationPage.HasNavigationBar="False">
+  
+        <StackLayout>
+
+            <Frame BackgroundColor="#215178" Padding="20" CornerRadius="0">
+                <Label Text="Login" HorizontalTextAlignment="Center" TextColor="White" FontSize="18"/>
+            </Frame>
+        <Image Aspect="AspectFit" Source="login.png" 
+                   WidthRequest="180" HeightRequest="180"></Image>
+        <Entry x:Name="txtUsuario" Placeholder="Usuario" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtPassword" Placeholder="Contraseña" IsPassword="True" PlaceholderColor="Gray"></Entry>
+        <Button x:Name="btnLoguear"
+                VerticalOptions="Center"
+                Text="Login"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="blue"
+                BorderWidth="1.5"
+                CornerRadius="50"></Button>
+    </StackLayout>
+    
+</ContentPage>
