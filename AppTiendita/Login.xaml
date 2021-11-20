@@ -2,26 +2,40 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppTiendita.Login"
-             BackgroundColor="#cde2f2"
              NavigationPage.HasNavigationBar="False">
-  
-        <StackLayout>
 
-            <Frame BackgroundColor="#215178" Padding="20" CornerRadius="0">
-                <Label Text="Login" HorizontalTextAlignment="Center" TextColor="White" FontSize="18"/>
-            </Frame>
-        <Image Aspect="AspectFit" Source="login.png" 
-                   WidthRequest="180" HeightRequest="180"></Image>
-        <Entry x:Name="txtUsuario" Placeholder="Usuario" PlaceholderColor="Gray"></Entry>
-            <Entry x:Name="txtPassword" Placeholder="Contraseña" IsPassword="True" PlaceholderColor="Gray"></Entry>
-        <Button x:Name="btnLoguear"
-                VerticalOptions="Center"
-                Text="Login"
-                TextColor="Black"
-                BackgroundColor="Transparent"
-                BorderColor="blue"
-                BorderWidth="1.5"
-                CornerRadius="50"></Button>
-    </StackLayout>
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="fondo.png" Aspect="AspectFill"></Image>
+            <BoxView Color="#cde2f2" Opacity="0.8"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="login.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>
+
+                <StackLayout Grid.Row="1" Padding="30,20">
+                    <Entry Placeholder="Correo electrónico" PlaceholderColor="#294271"/>
+                    <Entry Placeholder="Contraseña" PlaceholderColor="#294271" IsPassword="True"/>
+                    <Button Text="Iniciar sesión" BackgroundColor="White" BorderRadius="20" BorderColor="#294271" BorderWidth="1.5"
+                CornerRadius="50"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="¿recuperar contraseña?" />
+                        <Label Text="Registrarse" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="2" HorizontalOptions="Center" Margin="0,0,0,30">
+                    <Label Text="Iniciar sesión con" HorizontalOptions="Center"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Grid.Row="0" Source="facebook.png" WidthRequest="45" HeightRequest="45"/>
+                        <Image Grid.Row="0" Source="twitter.png" WidthRequest="45" HeightRequest="45"/>
+                        <Image Grid.Row="0" Source="instagram.png" WidthRequest="45" HeightRequest="45"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
     
 </ContentPage>
