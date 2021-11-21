@@ -17,12 +17,12 @@
                 <Image Grid.Row="0" Source="login.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30"/>
 
                 <StackLayout Grid.Row="1" Padding="30,20">
-                    <Entry Placeholder="Correo electrónico" PlaceholderColor="#294271"/>
-                    <Entry Placeholder="Contraseña" PlaceholderColor="#294271" IsPassword="True"/>
+                    <Entry x:Name="txtCorreo" Placeholder="Correo electrónico" PlaceholderColor="#294271"/>
+                    <Entry x:Name="txtPassword" Placeholder="Contraseña" PlaceholderColor="#294271" IsPassword="True"/>
                     <Button Text="Iniciar sesión" BackgroundColor="White" BorderRadius="20" BorderColor="#294271" BorderWidth="1.5"
-                CornerRadius="50"/>
+                CornerRadius="50" x:Name="btnLoguear" Clicked="btnLoguear_Clicked"/>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="¿recuperar contraseña?" />
+                        <Label Text="¿Recuperar contraseña?" />
                         <Label Text="Registrarse" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
                 </StackLayout>
@@ -37,5 +37,5 @@
             </Grid>
         </Grid>
     </ContentPage.Content>
-    
+
 </ContentPage>
