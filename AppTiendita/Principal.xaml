@@ -6,14 +6,14 @@
             BackgroundColor="#cde2f2"
              NavigationPage.HasNavigationBar="False"
             >
-  <FlyoutPage.Flyout>
-    <pages:PrincipalFlyout x:Name="FlyoutPage" />
-  </FlyoutPage.Flyout>
-  <FlyoutPage.Detail>
-    <NavigationPage>
-      <x:Arguments>
-        <pages:PrincipalDetail />
-      </x:Arguments>
-    </NavigationPage>
-  </FlyoutPage.Detail>
+    <FlyoutPage.Flyout>
+        <pages:PrincipalFlyout x:Name="FlyoutPage" />
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:PrincipalDetail />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
 </FlyoutPage>

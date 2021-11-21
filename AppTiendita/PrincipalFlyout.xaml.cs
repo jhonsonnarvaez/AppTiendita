@@ -33,10 +33,10 @@ namespace AppTiendita
             {
                 MenuItems = new ObservableCollection<PrincipalFlyoutMenuItem>(new[]
                 {
-                    new PrincipalFlyoutMenuItem { Id = 0, Title = "Clientes",TargetType=typeof(Clientes) },
-                    new PrincipalFlyoutMenuItem { Id = 1, Title = "Ventas",TargetType=typeof(Ventas) },
-                    new PrincipalFlyoutMenuItem { Id = 2, Title = "Deudas",TargetType=typeof(Deudas) },
-                    new PrincipalFlyoutMenuItem { Id = 3, Title = "Cerrar Sesión" }
+                    new PrincipalFlyoutMenuItem { Id = 0, Title = "Clientes",IconSource="user.png",TargetType=typeof(Clientes) },
+                    new PrincipalFlyoutMenuItem { Id = 1, Title = "Ventas",IconSource="ventas.png",TargetType=typeof(Ventas) },
+                    new PrincipalFlyoutMenuItem { Id = 2, Title = "Deudas",IconSource="lista.png",TargetType=typeof(Deudas) },
+                    new PrincipalFlyoutMenuItem { Id = 3, Title = "Cerrar Sesión",IconSource="cerrar.png" }
                 });
             }
 
