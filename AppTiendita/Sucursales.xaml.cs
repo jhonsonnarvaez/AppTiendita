@@ -29,35 +29,39 @@ namespace AppTiendita
         {
             try
             {
-                var content = await client.GetStringAsync(Url+ "?IDPROPIETARIO="+ idPropietario);
-                if (content.Equals("false")){
+                var content = await client.GetStringAsync(Url + "?IDPROPIETARIO=" + idPropietario);
+                if (content.Equals("false"))
+                {
                     await DisplayAlert("Mensaje", "Error al obtener las sucursales", "OK");
                 }
                 else
                 {
-                    try
+
+                    List<Sucursal> sucursales = JsonConvert.DeserializeObject<List<Sucursal>>(content);
+                    if (sucursales.Count() > 1)
                     {
-                        List<Sucursal> sucursales = JsonConvert.DeserializeObject<List<Sucursal>>(content);
                         _sucursales = new ObservableCollection<Sucursal>(sucursales);
                         MyListView.ItemsSource = _sucursales;
                         MyListView.ItemSelected += async (sender, e) =>
                         {
                             if (e.SelectedItem != null)
                             {
-                               Sucursal sucursal = (Sucursal)e.SelectedItem;
-                                await Navigation.PushAsync(new Menu(sucursal));
+                                Sucursal sucursal = (Sucursal)e.SelectedItem;
+                                await Navigation.PushAsync(new Principal(sucursal));
                             }
                         };
+
                     }
-                    catch(Exception e)
+                    else
                     {
-                        Sucursal sucursal = JsonConvert.DeserializeObject<Sucursal>(content);
-                        await Navigation.PushAsync(new Menu(sucursal));
+                        Sucursal sucursal = sucursales.First();
+                        await Navigation.PushAsync(new Principal(sucursal));
                     }
+
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 await DisplayAlert("Mensaje de advertencia", ex.Message, "OK");
             }

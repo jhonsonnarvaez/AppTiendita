@@ -2,18 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppTiendita.Sucursales"
+             BackgroundColor="#cde2f2"
              NavigationPage.HasNavigationBar="False">
+    
     <StackLayout>
+        <Frame BackgroundColor="#294271" CornerRadius="0">
+            <Label Text="Mis Sucursales" HorizontalTextAlignment="Center" TextColor="White" FontSize="18" FontAttributes="Bold,Italic"/>
+        </Frame>
+        <ScrollView>
         <ListView x:Name="MyListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
-                            <Label x:Name="lblsucursal" Text="{Binding codigosucursal}"></Label>
+                            <Label x:Name="lblsucursal" Text="{Binding codigosucursal}" FontSize="20" TextColor="Black"></Label>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        </ScrollView>
     </StackLayout>
 </ContentPage>

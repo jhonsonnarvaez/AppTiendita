@@ -1,5 +1,4 @@
-﻿using AppTiendita.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace AppTiendita
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Menu : ContentPage
+    public partial class Ventas : ContentPage
     {
-        public Menu(Sucursal sucursal)
+        public Ventas()
         {
             InitializeComponent();
         }
