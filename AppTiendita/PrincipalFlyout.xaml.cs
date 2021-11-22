@@ -36,7 +36,7 @@ namespace AppTiendita
                     new PrincipalFlyoutMenuItem { Id = 0, Title = "Clientes",IconSource="user.png",TargetType=typeof(Clientes) },
                     new PrincipalFlyoutMenuItem { Id = 1, Title = "Ventas",IconSource="ventas.png",TargetType=typeof(Ventas) },
                     new PrincipalFlyoutMenuItem { Id = 2, Title = "Deudas",IconSource="lista.png",TargetType=typeof(Deudas) },
-                    new PrincipalFlyoutMenuItem { Id = 3, Title = "Cerrar Sesión",IconSource="cerrar.png" }
+                    new PrincipalFlyoutMenuItem { Id = 3, Title = "Cerrar",IconSource="cerrar.png",TargetType=typeof(Login) }
                 });
             }
 

@@ -5,9 +5,20 @@
              BackgroundColor="#cde2f2">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Ventas"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ScrollView>
+                <ListView x:Name="MyListViewVenta">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label x:Name="lblventa" Text="{Binding fechaventa, StringFormat='{0:dd/MM/yyy}'}" FontSize="20" TextColor="Black"></Label>
+                                    <Label x:Name="lblsuma" Text="{Binding precio}" FontSize="20" TextColor="Black"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

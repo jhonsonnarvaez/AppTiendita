@@ -31,7 +31,7 @@ namespace AppTiendita
 
         private async void obtenerClientes(int idSucursal)
         {
-            var content = await client.GetStringAsync(Url + "?IDSUCURSAL=" + idSucursal);
+            var content = await client.GetStringAsync(Url + "?IDSUCURSAL=" + idSucursal+"&CLIENTE");
             if (content.Equals("false"))
             {
                 await DisplayAlert("Mensaje", "Error al obtener los clientes", "OK");

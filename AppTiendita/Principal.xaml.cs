@@ -39,6 +39,23 @@ namespace AppTiendita
                 page.Title = "Clientes";
             }
 
+            if (page.Title.Equals("Ventas"))
+            {
+                page = new Ventas(idSucursal);
+                page.Title = "Ventas";
+            }
+
+            if (page.Title.Equals("Deudas"))
+            {
+                page = new Deudas(idSucursal);
+                page.Title = "Deudas";
+            }
+
+            if (page.Title.Equals("Cerrar"))
+            {
+                page = new Login();
+            }
+
             Detail = new NavigationPage(page);
             IsPresented = false;
 

@@ -5,9 +5,20 @@
              BackgroundColor="#cde2f2">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Deudas"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ScrollView>
+                <ListView x:Name="MyListViewDeuda">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label x:Name="lblnombre" Text="{Binding nombrecompleto}" FontSize="20" TextColor="Black"></Label>
+                                    <Label x:Name="lbltotal" Text="{Binding totaldeuda}" FontSize="20" TextColor="Black"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
