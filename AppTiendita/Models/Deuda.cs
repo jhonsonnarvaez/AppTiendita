@@ -6,6 +6,7 @@ namespace AppTiendita.Models
 {
    public class Deuda
     {
+        public int idcliente { get; set; }
         public string nombrecliente { get; set; }
         public string apellidocliente { get; set; }
 

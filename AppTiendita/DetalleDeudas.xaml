@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTiendita.DetalleDeudas">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <ListView x:Name="MyListViewDetalleDeuda">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label x:Name="lblcantidad" Text="{Binding cantidad}" FontSize="20" TextColor="Black"></Label>
+                                    <Label x:Name="lblnombre" Text="{Binding nombreproducto}" FontSize="20" TextColor="Black"></Label>
+                                    <Label x:Name="lbltotal" Text="{Binding precioventa}" FontSize="20" TextColor="Black"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

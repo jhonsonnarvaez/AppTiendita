@@ -32,6 +32,7 @@ namespace AppTiendita
         private async void obtenerDeudas(int idSucursal)
         {
             var content = await client.GetStringAsync(Url + "?IDSUCURSALES=" + idSucursal + "&DEUDAS");
+            Deuda detalleDeuda;
             if (content.Equals("false"))
             {
                 await DisplayAlert("Mensaje", "Error al obtener las deudas de los clientes", "OK");
@@ -41,6 +42,15 @@ namespace AppTiendita
                 List<Deuda> lstDeudas = JsonConvert.DeserializeObject<List<Deuda>>(content);
                 _deuda = new ObservableCollection<Deuda>(lstDeudas);
                 MyListViewDeuda.ItemsSource = _deuda;
+
+                MyListViewDeuda.ItemSelected += async (sender, e) =>
+                  {
+                      if (e.SelectedItem != null)
+                      {
+                          detalleDeuda = (Deuda)e.SelectedItem;
+                          await Navigation.PushAsync(new DetalleDeudas(detalleDeuda.idcliente));
+                      }
+                  };
             }
         }
     }
