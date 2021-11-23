@@ -18,7 +18,7 @@ namespace AppTiendita
             InitializeComponent();
             txtNombre.Text = cliente.nombrecompleto;
             txtDireccion.Text = cliente.direccioncliente;
-            txtTelefono.Text = cliente.telefonocliente + "/"+ cliente.celularcliente;
+            txtTelefono.Text = cliente.telefonocliente + " / "+ cliente.celularcliente;
             txtIdentidad.Text = cliente.identificacioncliente;
             txtCorreo.Text = cliente.correocliente;
         }
