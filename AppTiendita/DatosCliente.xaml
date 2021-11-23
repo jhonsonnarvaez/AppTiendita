@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTiendita.DatosCliente">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#294271" Padding="24" CornerRadius="0">
+                <Label Text="Datos Cliente" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Nombre:" Grid.Row="0" Grid.Column="0"/>
+                <Label x:Name="txtNombre"  Grid.Row="0" Grid.Column="1"/>
+
+                <Label Text="Dirección:" Grid.Row="1" Grid.Column="0"/>
+                <Label x:Name="txtDireccion"  Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="Teléfonos:" Grid.Row="2" Grid.Column="0"/>
+                <Label x:Name="txtTelefono"  Grid.Row="2" Grid.Column="1"/>
+                
+                <Label Text="Identificación:" Grid.Row="3" Grid.Column="0"/>
+                <Label x:Name="txtIdentidad"  Grid.Row="3" Grid.Column="1"/>
+
+                <Label Text="Correo:" Grid.Row="4" Grid.Column="0"/>
+                <Label x:Name="txtCorreo"  Grid.Row="4" Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

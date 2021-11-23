@@ -31,6 +31,7 @@ namespace AppTiendita
 
         private async void obtenerClientes(int idSucursal)
         {
+            Cliente cliente;
             var content = await client.GetStringAsync(Url + "?IDSUCURSAL=" + idSucursal+"&CLIENTE");
             if (content.Equals("false"))
             {
@@ -41,6 +42,14 @@ namespace AppTiendita
                 List<Cliente> lstClientes = JsonConvert.DeserializeObject<List<Cliente>>(content);
                 _cliente = new ObservableCollection<Cliente>(lstClientes);
                 MyListViewCliente.ItemsSource = _cliente;
+                MyListViewCliente.ItemSelected += async (sender, e) =>
+                {
+                    if (e.SelectedItem != null)
+                    {
+                        cliente = (Cliente)e.SelectedItem;
+                        await Navigation.PushAsync(new DatosCliente(cliente));
+                    }
+                };
             }
         }
     }
